@@ -8,6 +8,14 @@ macro(build_livox_sdk)
   set(livox_sdk_REV "v2.3.1")
   set(extra_cmake_args)
 
+  # SDK 2.3.1 bundles an older fmt whose char8_t enum triggers GCC 13's
+  # C++20 compatibility warning. Keep other warnings as errors in the SDK.
+  if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND
+     CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 13)
+    list(APPEND extra_cmake_args
+      "-DCMAKE_CXX_FLAGS:STRING=${CMAKE_CXX_FLAGS} -Wno-error=c++20-compat")
+  endif()
+
   get_property(multi_config GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
   if(NOT multi_config AND DEFINED CMAKE_BUILD_TYPE)
     list(APPEND extra_cmake_args -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE})

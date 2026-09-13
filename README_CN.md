@@ -1,5 +1,10 @@
 # 览沃 ROS2 驱动程序（ [livox_ros2_driver English README](https://github.com/Livox-SDK/livox_ros2_driver/) ）
 
+## 本工作区：Ubuntu 24.04 / ROS 2 Jazzy
+
+本仓库以 Jazzy、MID-70 和 Livox SDK 2.3.1 为目标，vendor 包已加入 GCC 13 兼容处理。请按照 dart_vision 根目录 README 构建，并加载 `/opt/ros/jazzy/setup.bash`。下文为上游历史版本说明。
+
+
 览沃 ROS2 驱动程序是基于 ROS2 的驱动程序包，专门用于连接览沃生产的 LiDAR 产品。该驱动程序目前仅推荐在 ubuntu18.04 下运行，对应的 ROS2 版本是 dashing， 暂时不支持 ROS2 其他版本。
 
 ## 0. 版本和发布记录

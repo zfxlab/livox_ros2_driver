@@ -1,5 +1,10 @@
 # Livox ROS2 Driver([览沃ROS2驱动程序中文说明](https://github.com/Livox-SDK/livox_ros2_driver/blob/master/README_CN.md))
 
+## Dart workspace: Ubuntu 24.04 / ROS 2 Jazzy
+
+This checkout targets Jazzy with MID-70 and Livox SDK 2.3.1. The vendor package includes a GCC 13 compatibility adjustment. Build from the dart_vision workspace using its root README; source `/opt/ros/jazzy/setup.bash`. The upstream instructions below describe historical distributions.
+
+
 The Livox ROS2 driver is a driver package based on ROS2, specifically used to connect LiDAR products produced by Livox.
 ## 0. Version and Release History
 
